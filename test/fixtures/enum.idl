@@ -1,0 +1,13 @@
+namespace enumTests {
+  enum AllOnNextLine {
+    one, two, three
+  };
+
+  enum OnePerLine {
+    rock,
+    paper,
+    scissors
+  };
+
+  enum EverythingOnSameLine { six, five, four };
+};

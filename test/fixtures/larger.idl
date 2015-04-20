@@ -1,0 +1,51 @@
+namespace larger {
+
+  enum MyEnum {
+    rock, paper, scissors
+  };
+
+  dictionary TypeTest {
+    byte a;
+    octet b;
+    short c;
+    unsigned short d;
+    long e;
+    unsigned long f;
+    long long g;
+    unsigned long long h;
+    float i;
+    unrestricted float j;
+    double k;
+    unrestricted double l;
+    DOMString m;
+    boolean n;
+    object o;
+    any p;
+    Point q;
+    Point[] r;
+    boolean[] s;
+  };
+
+  dictionary Point {
+    any? x;
+    short? y;
+    IdObject id;
+  };
+
+  dictionary IdObject {
+    long id;
+  };
+
+  callback DoneCallback = void (short status);
+  callback PointCallback = void (Point[] points);
+
+  interface Functions {
+    static void asyncDistance(Point point, optional DoneCallback callback);
+    static void getAllPoints(IdObject[] ids, PointCallback callback);
+    static void RPS(MyEnum move);
+  };
+
+  interface Events {
+    static void onChanged();
+  };
+};

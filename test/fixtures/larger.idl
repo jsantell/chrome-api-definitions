@@ -33,7 +33,9 @@ namespace larger {
   };
 
   dictionary IdObject {
-    long id;
+    // We implicitly test to see if this legalValues attribute
+    // does not crash parsing, so do not remove
+    [legalValues=(16,32)] long id;
   };
 
   callback DoneCallback = void (short status);

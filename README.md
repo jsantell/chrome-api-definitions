@@ -10,8 +10,6 @@ Parsing the Blink WebIDL here is a horrible hack to get it similar to the APIs w
 
 ## License
 
-For chrome-api-defintions
-*MIT License, Copyright (c) 2015 Jordan Santell*
+For chrome-api-defintions: *MIT License, Copyright (c) 2015 Jordan Santell*
 
-For API manifests from Chromium source
-*Modified BSD License, Copyright 2014 The Chromium Authors. All rights reserved.*
+For API manifests from Chromium source: *Modified BSD License, Copyright 2014 The Chromium Authors. All rights reserved.*

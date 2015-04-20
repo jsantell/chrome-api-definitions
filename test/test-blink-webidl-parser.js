@@ -37,6 +37,10 @@ describe("blink-webidl-parser", function () {
       expect(entry.values).to.contain("five");
       expect(entry.values).to.contain("four");
     });
+    it("handles when last bracket and last value are on the same line together", function () {
+      var entry = _.findWhere(parse(ENUM_PATH), { name: "ValueBracketSameLine" });
+      expect(entry.values.length).to.be.equal(3);
+    });
   });
 
   describe("any nullables", function () {

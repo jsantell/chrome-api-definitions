@@ -3,6 +3,11 @@ namespace enumTests {
     one, two, three
   };
 
+  enum ValueBracketSameLine {
+    gimmefue
+    gimmefai
+    gimmedabajabaza};
+
   enum OnePerLine {
     rock,
     paper,
@@ -10,4 +15,11 @@ namespace enumTests {
   };
 
   enum EverythingOnSameLine { six, five, four };
+
+  // Was a bug where enum parsing would break if followed
+  // by a dictionary, like it was never aborting from IS_ENUM mode
+  // so leave this extra dict here.
+  dictionary Model {
+    long id;
+  };
 };

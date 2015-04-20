@@ -41,11 +41,17 @@ describe("utils", function () {
       expect(def.functions.length).to.be.equal(12);
       expect(def.types.length).to.be.equal(2);
     });
-    it("maps camel-cased deep namespace (devtools.inspectedWindow -> devtools/inspected_window)", function () {
+    it("maps camel-cased deep namespace in dirs (devtools.inspectedWindow -> devtools/inspected_window)", function () {
       var def = utils.getDefinition("devtools.inspectedWindow", API_ROOT);
       expect(def.namespace).to.be.equal("devtools.inspectedWindow");
       expect(def.functions.length).to.be.equal(3);
       expect(def.types.length).to.be.equal(1);
+    });
+    it("maps camel-cased deep namespace (system.cpu -> system_cpu)", function () {
+      var def = utils.getDefinition("system.cpu", API_ROOT);
+      expect(def.namespace).to.be.equal("system.cpu");
+      expect(def.functions.length).to.be.equal(1);
+      expect(def.types.length).to.be.equal(3);
     });
   });
 

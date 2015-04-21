@@ -8,6 +8,54 @@ While the [original manifests](https://code.google.com/p/chromium/codesearch#chr
 
 Parsing the Blink WebIDL here is a horrible hack to get it similar to the APIs with JSON definitions, but gets us close enough.
 
+## Output
+
+Pretty much an array of all specified APIs (by `filter` config), using the [JSON definitions](https://github.com/jsantell/chrome-api-definitions/blob/master/api/chrome/tabs.json) from Chromium if they exist, or otherwise using the WebIDL version for something that attempts to get pretty close.
+
+Root APIs (like `alarms` or `devtools.inspectedWindow`) also now have properties of `permissions` and `content_script`, if these were defined in the Chromium manifest, for example:
+
+```
+{
+  "namespace": "storage",
+  "dependencies": ["permission:storage"],
+  "content_script": true
+}
+```
+
+When defined in the manifest, an API's methods can also have this additional information (only `runtime` and `extensions` API have individual methods in the manifest, AFAIK).
+
+```
+{
+  "namespace": "runtime",
+  ...
+  "functions": [{
+    "name": "sendMessage",
+    "content_script": true
+  }, {
+  ...
+  }]
+}
+
+```
+
+View [built output of stable APIs](https://github.com/jsantell/chrome-api-definitions/blob/master/output/stable.json) for the most illumination.
+
+## API
+
+#### getDefinitions(options)
+
+Returns the definition for the specified APIs as an object. Options:
+
+* `filter` - provide an array of namespaces to filter by, or use a string to specify a preset in `api-names.json`. Defaults to the preset `"stable"`.
+* `apiRoot` - path to the directory containing both `common` and `chrome` APIs. Uses the directory in `./api` by default. Not tested.
+
+#### saveDefinitions(options)
+
+Same as `getDefinitions()` except it just saves to disk. Takes the same options as `getDefinitions()`, plus:
+
+* `dest` - path of where the definition should be saved.
+
+
 ## License
 
 For chrome-api-defintions: *MIT License, Copyright (c) 2015 Jordan Santell*

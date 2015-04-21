@@ -1,0 +1,4 @@
+{
+  "experimental.devtools.console": "devtools/experimental_console",
+  "experimental.devtools.audits": "devtools/experimental_audits"
+}

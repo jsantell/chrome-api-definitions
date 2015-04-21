@@ -53,6 +53,12 @@ describe("utils", function () {
       expect(def.functions.length).to.be.equal(1);
       expect(def.types.length).to.be.equal(3);
     });
+    it("maps namespaces that require special case json", function () {
+      var def = utils.getDefinition("experimental.devtools.console", API_ROOT);
+      expect(def.namespace).to.be.equal("experimental.devtools.console");
+      expect(def.functions.length).to.be.equal(2);
+      expect(def.types.length).to.be.equal(2);
+    });
   });
 
   describe(".attachMeta", function () {

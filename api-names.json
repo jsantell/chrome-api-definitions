@@ -74,6 +74,6 @@
     "enterprise.platformKeys",
     "fileBrowserHandler",
     "fileSystemProvider",
-    "input.ime",
+    "input.ime"
   ]
 }

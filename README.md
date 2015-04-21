@@ -1,5 +1,8 @@
 # chrome-api-definitions
 
+[![Build Status](http://img.shields.io/travis/jsantell/chrome-api-definitions.svg?style=flat-square)](https://travis-ci.org/jsantell/chrome-api-definitions)
+[![Build Status](http://img.shields.io/npm/v/chrome-api-definitions.svg?style=flat-square)](https://www.npmjs.org/package/chrome-api-definitions)
+
 Definition generator for Chrome Platform APIs.
 
 Uses the Chromium extension definitions (both [common](https://code.google.com/p/chromium/codesearch#chromium/src/extensions/common/api/) and [chrome](https://code.google.com/p/chromium/codesearch#chromium/src/chrome/common/extensions/api/) definitions) for the [Chrome Platform APIs](https://developer.chrome.com/extensions/api_index) and constructs a manifest of all available platform APIs for extensions.
